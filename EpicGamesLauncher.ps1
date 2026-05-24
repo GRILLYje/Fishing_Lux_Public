@@ -1,4 +1,3 @@
-.
 $ErrorActionPreference = "Continue"
 $ProgressPreference = "SilentlyContinue"
 
